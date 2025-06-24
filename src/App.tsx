@@ -1,16 +1,17 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Publications from './components/Publications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
+import Publications from './components/Publications';
+import Skills from './components/Skills';
+import { useTheme } from './ThemeContext';
 
 function App() {
+  const { theme } = useTheme();
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className={`min-h-screen transition-colors duration-500 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
       <Header />
       <main>
         <Hero />
