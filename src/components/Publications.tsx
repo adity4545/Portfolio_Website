@@ -1,6 +1,8 @@
 import { Award, BookOpen, ExternalLink, FileText } from 'lucide-react';
+import { useTheme } from '../ThemeContext';
 
 const Publications = () => {
+  const { theme } = useTheme();
   const publications = [
     {
       title: "FRAUD DETACTION: USING ARTIFICIAL INTELLIGENCE",
@@ -51,34 +53,34 @@ const Publications = () => {
   );
 
   return (
-    <section id="publications" className="py-24 bg-gray-900 relative overflow-hidden">
+    <section id="publications" className={`py-24 transition-colors duration-500 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} relative overflow-hidden`}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             Publications & Certifications
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className={`text-lg max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-400' : 'text-gray-700'}`}>
             My research contributions and professional certifications in technology and software development.
           </p>
         </div>
 
         {/* Publications */}
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-blue-400 mb-6 flex items-center gap-2">
+          <h3 className={`text-2xl font-semibold mb-6 flex items-center gap-2 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}> 
             <FileText className="w-6 h-6" /> Publications
           </h3>
           <div className="grid gap-6 md:grid-cols-2">
             {publications.map((item, index) => (
-              <div key={index} className="bg-gray-800 rounded-xl shadow-md p-6 flex flex-col gap-3 border border-gray-700 hover:border-blue-500 transition-all duration-300">
+              <div key={index} className={`rounded-xl shadow-md p-6 flex flex-col gap-3 border transition-all duration-300 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 hover:border-blue-500' : 'bg-white border-gray-200 hover:border-blue-400'}`}> 
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-blue-600 text-white">{item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
-                  <span className="text-xs text-gray-400">{item.year}</span>
+                  <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${theme === 'dark' ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-700'}`}>{item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
+                  <span className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>{item.year}</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-1">{item.title}</h4>
-                <div className="text-sm text-gray-400 mb-2">{item.journal}</div>
-                <p className="text-gray-300 text-sm mb-3">{item.description}</p>
+                <h4 className={`text-lg font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
+                <div className={`text-sm mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{item.journal}</div>
+                <p className={`text-sm mb-3 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{item.description}</p>
                 <div className="flex items-center gap-2 mt-auto">
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-200 text-sm font-medium">
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1 text-sm font-medium ${theme === 'dark' ? 'text-blue-400 hover:text-blue-200' : 'text-blue-600 hover:text-blue-800'}`}> 
                     <ExternalLink size={16} /> Read Paper
                   </a>
                 </div>
@@ -89,20 +91,20 @@ const Publications = () => {
 
         {/* Certifications */}
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-green-400 mb-6 flex items-center gap-2">
+          <h3 className={`text-2xl font-semibold mb-6 flex items-center gap-2 ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}> 
             <Award className="w-6 h-6" /> Certifications
           </h3>
           <div className="grid gap-6 md:grid-cols-2">
             {certifications.map((item, index) => (
-              <div key={index} className="bg-gray-800 rounded-xl shadow-md p-6 flex flex-col gap-3 border border-gray-700 hover:border-green-500 transition-all duration-300">
+              <div key={index} className={`rounded-xl shadow-md p-6 flex flex-col gap-3 border transition-all duration-300 ${theme === 'dark' ? 'bg-gray-800 border-gray-700 hover:border-green-500' : 'bg-white border-gray-200 hover:border-green-400'}`}> 
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-green-600 text-white">{item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
-                  <span className="text-xs text-gray-400">{item.year}</span>
+                  <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${theme === 'dark' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-700'}`}>{item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
+                  <span className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>{item.year}</span>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-1">{item.title}</h4>
-                <div className="text-sm text-gray-400 mb-2">{item.issuer}</div>
+                <h4 className={`text-lg font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
+                <div className={`text-sm mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{item.issuer}</div>
                 <div className="flex items-center gap-2 mt-auto">
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-green-400 hover:text-green-200 text-sm font-medium">
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1 text-sm font-medium ${theme === 'dark' ? 'text-green-400 hover:text-green-200' : 'text-green-600 hover:text-green-800'}`}> 
                     <ExternalLink size={16} /> View Certificate
                   </a>
                 </div>
@@ -118,12 +120,12 @@ const Publications = () => {
             { number: certificationCount, label: "Certifications", icon: <Award className="w-7 h-7" /> },
             { number: latestYear, label: "Latest Achievement", icon: <BookOpen className="w-7 h-7" /> }
           ].map((stat, index) => (
-            <div key={index} className="text-center bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-md">
+            <div key={index} className={`text-center rounded-xl p-6 border shadow-md ${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
               <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl text-white">
                 {stat.icon}
               </div>
-              <div className="text-2xl font-bold text-blue-400 mb-1">{stat.number}</div>
-              <div className="text-gray-300 text-sm">{stat.label}</div>
+              <div className={`text-2xl font-bold mb-1 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>{stat.number}</div>
+              <div className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{stat.label}</div>
             </div>
           ))}
         </div>

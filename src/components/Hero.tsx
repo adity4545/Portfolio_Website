@@ -28,7 +28,7 @@ const Hero = () => {
             <p className={`mt-6 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
               Full Stack Developer specializing in MERN Stack, Next.js, and Blockchain Technology.
             </p>
-
+            
             <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4">
               <button
                 onClick={() => scrollToSection('projects')}
@@ -47,8 +47,8 @@ const Hero = () => {
                 Get In Touch
               </button>
             </div>
-          </div>
-          
+            </div>
+
           {/* Avatar - Order 1 on small screens, 2 on large */}
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto lg:w-9/10 lg:h-auto order-1 lg:order-2">
             <div className="relative group">
