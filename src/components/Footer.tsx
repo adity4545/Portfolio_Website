@@ -103,8 +103,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className={`flex items-center space-x-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
               <span>© {currentYear} Aditya Kakkad. Made with</span>
-              <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-              <span>and React</span>
+              <Heart className="w-7 h-7 text-red-500 animate-pulse" />
             </p>
             
             <div className={`flex items-center space-x-6 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
